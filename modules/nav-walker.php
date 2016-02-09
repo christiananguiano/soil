@@ -73,15 +73,15 @@ class NavWalker extends \Walker_Nav_Menu {
     $classes = preg_replace('/^((menu|page)[-_\w+]+)+/', '', $classes);
 
     // Re-add core `menu-item` class
-    $classes[] = 'menu-item';
+    $classes[] = 'nav__item';
 
     // Re-add core `menu-item-has-children` class on parent elements
     if ($item->is_subitem) {
-      $classes[] = 'menu-item-has-children';
+      $classes[] = 'nav__item-has-children';
     }
 
     // Add `menu-<slug>` class
-    $classes[] = 'menu-' . $slug;
+    $classes[] = 'nav__' . $slug;
 
     $classes = array_unique($classes);
     $classes = array_map('trim', $classes);
